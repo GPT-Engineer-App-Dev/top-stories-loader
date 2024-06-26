@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Spinner } from "@/components/ui/spinner";
+
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const HackerNewsTopStories = () => {
@@ -55,7 +55,9 @@ const HackerNewsTopStories = () => {
       />
       {loading ? (
         <div className="flex justify-center items-center">
-          <Spinner />
+          <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
